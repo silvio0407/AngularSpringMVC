@@ -58,8 +58,7 @@ public class ContactService {
  
     private Page<Contact> executeQueryFindAll(int page, int maxResults) {
         final PageRequest pageRequest = new PageRequest(page, maxResults, sortByNameASC());
- 
-        return contactRepository.findAll(pageRequest);
+         return contactRepository.findAll(pageRequest);
     }
  
     private Sort sortByNameASC() {
