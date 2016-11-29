@@ -57,8 +57,7 @@ public class ContactService {
     }
  
     private Page<Contact> executeQueryFindAll(int page, int maxResults) {
-        final PageRequest pageRequest = new PageRequest(page, maxResults, sortByNameASC());
- 
+        final PageRequest pageRequest = new PageRequest(page, maxResults, sortByNameASC()); 
         return contactRepository.findAll(pageRequest);
     }
  
@@ -75,7 +74,7 @@ public class ContactService {
  
         return contactRepository.findByNameLike(pageRequest, "%" + name + "%");
     }
- 
+
     private boolean isUserAfterOrOnLastPage(int page, Page<Contact> result) {
         return page >= result.getTotalPages() - 1;
     }
